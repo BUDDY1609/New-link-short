@@ -414,9 +414,9 @@ async def get_shortlink(link):
                     return data['shortenedUrl']
                 else:
                     logger.error(f"Error: {data['message']}")
-                    return f'https://nanolinks.in/api?api={SHORTNER_API}&url={link}'
+                    return f'https://nanolinks.in/api?api={SHORTNER_API}&link={link}'
 
     except Exception as e:
         logger.error(e)
-        return f'https://nanolinks.in/api?api={SHORTNER_API}&url={link}'
+        return f'https://nanolinks.in/api?api={SHORTNER_API}&link={link}'
     
