@@ -401,7 +401,7 @@ async def get_shortlink(link):
     if "http" == https:
         https = "https"
         link = link.replace("http", https)
-    url = f'https://nanolinks.in/st'
+    url = f'https://nanolinks.in/api'
     params = {'api': SHORTNER_API,
               'url': link,
               }
@@ -414,8 +414,9 @@ async def get_shortlink(link):
                     return data['shortenedUrl']
                 else:
                     logger.error(f"Error: {data['message']}")
-                    return f'https://nanolinks.in/st?api={SHORTNER_API}&url={link}'
+                    return f'https://nanolinks.in/api?api={SHORTNER_API}&url={link}'
 
     except Exception as e:
         logger.error(e)
-        return f'https://nanolinks.in/st?api={SHORTNER_API}&url={link}'
+        return f'https://nanolinks.in/api?api={SHORTNER_API}&url={link}'
+    
